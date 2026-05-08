@@ -18,69 +18,74 @@ int main() {
 
     for (int n : nums) cout << n << " ";
     cout << endl;
-    
-    
-    
-    
+
     for (int i = (int)nums.size() - 1; i >= 0; i--) cout << nums[i] << " ";
     cout << endl;
 
+
+
+
+    
     int evenCount = 0;
     for (int n : nums) if (n % 2 == 0) evenCount++;
     cout << evenCount << endl;
 
+
+
+    
     vector<double> sales(5);
     vector<string> days = {"MondDay","Tuesday","Wednesday","Thursday","friday"};
 
-
-
-
-
-
-
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < (int)sales.size(); i++) {
         cout << "Enter sales for " << days[i] << ": ";
         cin >> sales[i];
     }
-    
-    
-    
-    
-    
 
+
+    
     string cont = "yes";
     while (cont == "yes" || cont == "Yes") {
         int day;
-        cout << "Pick a day (1-5): ";
+
+        
+        cout << "Pick a day (1-" << sales.size() << "): ";
         cin >> day;
 
-        if (day >= 1 && day <= 5) {
+        
+
+        if (day >= 1 && day <= (int)sales.size()) {
             cout << sales[day - 1] << endl;
+
+            
         } else {
+
+            
             cout << "INvalid day" << endl;
+            
         }
 
         cout << "Continue????? ";
         cin >> cont;
     }
 
-
-
+    
     vector<int> ages(20);
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < (int)ages.size(); i++) {
         cout << "Enter age # " << i + 1 << ": ";
         cin >> ages[i];
     }
 
 
 
+
+
+    
     int countAbove15 = 0;
     for (int a : ages) if (a > 15) countAbove15++;
     cout << countAbove15 << endl;
 
     vector<double> grades = {85.8, 93.7, 76, 88.5, 100, 91.3};
 
-  
     cout << avg(grades) << endl;
 
     return 0;
